@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="row">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="card text-start">
+      <img class="card-img-top" src="holder.js/100px180/" alt="" />
+      <div class="card-body">
+        <h4 class="card-title text-center">Login</h4>
+        <div class="container">
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="mb-3">
+              <label for="usuario" class="form-label">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                name="usuario"
+                id="usuario"
+                aria-describedby="helpId"
+                placeholder=""
+                formControlName="email"
+              />
+              <small id="helpId" class="form-text text-muted">Email</small>
+            </div>
+            <div class="mb-3">
+              <label for="Password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                name="Password"
+                id="Password"
+                placeholder=""
+                formControlName="password"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

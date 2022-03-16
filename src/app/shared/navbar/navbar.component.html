@@ -21,6 +21,18 @@
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/vista"
+            >vista 2
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/vista3"
+            >vista 3
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
       </ul>
       <ul class="navbar-nav d-flex" *ngIf="user$ | async as user; else login">
         <li class="nav-item" *ngIf="user">

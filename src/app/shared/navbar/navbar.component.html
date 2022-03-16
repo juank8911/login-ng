@@ -22,19 +22,25 @@
           </a>
         </li>
       </ul>
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/login">Login </a>
+      <ul class="navbar-nav d-flex" *ngIf="user$ | async as user; else login">
+        <li class="nav-item" *ngIf="user">
+          <a href="#" class="nav-link active" (click)="onLogout()">Logout</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link active" routerlink="/">Logout </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/register">Registro </a>
+          <a class="nav-link">{{ user?.email }} </a>
         </li>
       </ul>
+      <ng-template #login>
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item" *ngIf="!user">
+            <a class="nav-link active" routerLink="/login">Login </a>
+          </li>
+          <li class="nav-item" *ngIf="!user">
+            <a class="nav-link active" routerLink="/register">Registro </a>
+          </li>
+        </ul>
+      </ng-template>
     </div>
   </div>
 </nav>
